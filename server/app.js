@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 
 /* --------------------------------- ROUTES --------------------------------- */
+const videoRouter = require('./routes/videoRoute');
 
 /* ------------------------------ Error Handler ----------------------------- */
 
@@ -19,6 +20,8 @@ app.use(
 app.use(express.json());
 
 /* --------------------------------- ROUTES --------------------------------- */
+
+app.use('/api/v1/video', videoRouter);
 
 /* ------------------------------ Error Handler ----------------------------- */
 app.use('*', (req, res, next) => {
